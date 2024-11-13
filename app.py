@@ -41,6 +41,14 @@ if opcao == "Bairros com Ofertas e Procuras":  # Nova seção
         'Procuras': bairros_procurados.values
     })
 
+ # Criar gráfico de barras agrupadas
+    fig = px.bar(bairros_comparados, x='Bairros', y=['Ofertas', 'Procuras'],
+                 labels={'value': 'Quantidade', 'variable': 'Métrica'},
+                 title="Comparativo entre Bairros com Mais Ofertas e Bairros Mais Procurados",
+                 barmode='group')  # 'group' para agrupar as barras
+    
+    st.plotly_chart(fig)
+
 elif opcao == "Desempenho das Mídias":
     st.header("Desempenho das Mídias")
     midias = df['Mídia'].value_counts()
