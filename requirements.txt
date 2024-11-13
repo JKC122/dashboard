@@ -1,1 +1,4 @@
-Flask==2.2.2
+pandas
+streamlit
+plotly
+openpyxl  # Para leitura de arquivos Excel (.xlsx)
