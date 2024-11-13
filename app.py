@@ -36,9 +36,9 @@ if opcao == "Bairros Mais Procurados pelos Clientes":
 elif opcao == "Bairros com Maior Número de Imóveis Ofertados":
     st.header("Bairros com Maior Número de Imóveis Ofertados")
     bairros_ofertados = df['Região'].value_counts().head(10)
-    fig2 = px.bar(bairros_ofertados, x=bairros_ofertados.index, y=bairros_ofertados.values, 
+    fig1 = px.bar(bairros_ofertados, x=bairros_ofertados.index, y=bairros_ofertados.values, 
                   labels={'x': 'Bairros', 'y': 'Ofertas'}, title="Top 10 Bairros com Mais Ofertas de Imóveis")
-    st.plotly_chart(fig2)
+    st.plotly_chart(fig1)
 
 elif opcao == "Desempenho das Mídias":
     st.header("Desempenho das Mídias")
