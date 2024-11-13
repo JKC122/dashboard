@@ -14,7 +14,7 @@ opcao = st.sidebar.selectbox("Escolha uma opção", menu)
 # Função para carregar os dados, com cache para melhorar a performance
 @st.cache_data
 def carregar_dados():
-    file_path = "base_jlimobiliaria.xlsx"  # Ajuste conforme necessário
+    file_path = "imoveis_basecompleta.xlsx"  # Ajuste conforme necessário
     df = pd.read_excel(file_path, decimal=',')
     return df
 
