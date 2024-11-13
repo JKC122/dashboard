@@ -6,8 +6,7 @@ import plotly.express as px
 st.set_page_config(page_title="Dashboard Imobiliária", layout="wide")
 
 # Menu para navegação entre as seções
-menu = ["Bairros Mais Procurados pelos Clientes", 
-        "Bairros com Maior Número de Imóveis Ofertados", 
+menu = [ "Bairros com Ofertas e Procuras",
         "Desempenho das Mídias", 
         "Interesse por Tipo de Imóvel nos Bairros Mais Procurados"]
 opcao = st.sidebar.selectbox("Escolha uma opção", menu)
