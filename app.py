@@ -25,20 +25,21 @@ df = carregar_dados()
 # Título do Dashboard
 st.title("Dashboard - Análise Imobiliária")
 
-# Exibir diferentes seções de acordo com a opção escolhida no menu
-if opcao == "Bairros Mais Procurados pelos Clientes":
-    st.header("Bairros Mais Procurados pelos Clientes")
-    bairros_procurados = df['Região'].value_counts().head(10)
-    fig1 = px.bar(bairros_procurados, x=bairros_procurados.index, y=bairros_procurados.values, 
-                  labels={'x': 'Bairros', 'y': 'Procuras'}, title="Top 10 Bairros Mais Procurados")
-    st.plotly_chart(fig1)
-
-elif opcao == "Bairros com Maior Número de Imóveis Ofertados":
-    st.header("Bairros com Maior Número de Imóveis Ofertados")
+if opcao == "Bairros com Ofertas e Procuras":  # Nova seção
+    st.header("Comparativo: Ofertas e Procuras nos Bairros")
+    
+    # Número de imóveis ofertados por bairro
     bairros_ofertados = df['Região'].value_counts().head(10)
-    fig1 = px.bar(bairros_ofertados, x=bairros_ofertados.index, y=bairros_ofertados.values, 
-                  labels={'x': 'Bairros', 'y': 'Ofertas'}, title="Top 10 Bairros com Mais Ofertas de Imóveis")
-    st.plotly_chart(fig1)
+    
+    # Número de vezes que os bairros foram procurados
+    bairros_procurados = df['Região'].value_counts().head(10)
+    
+    # Unir as duas métricas (ofertas e procuras)
+    bairros_comparados = pd.DataFrame({
+        'Bairros': bairros_ofertados.index,
+        'Ofertas': bairros_ofertados.values,
+        'Procuras': bairros_procurados.values
+    })
 
 elif opcao == "Desempenho das Mídias":
     st.header("Desempenho das Mídias")
