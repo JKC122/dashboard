@@ -23,7 +23,7 @@ def carregar_dados():
 # Carregar os dados
 df = carregar_dados()
 df2 = pd.read_excel("imoveis_basecompleta.xlsx", decimal=',')
-df3 = pd.read_csv("base_cno_tratada.csv", decimal=',')
+df3 = pd.read_excel("base_cno_final.xlsx", decimal=',')
 
 # Limpeza de dados
 df.drop(['Cliente', 'Telefone(s)', 'Email', '$ Venda', '$ Locação', 
