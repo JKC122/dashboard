@@ -64,7 +64,7 @@ elif opcao == "Desempenho das Mídias":
                   title="Desempenho das Mídias")
     st.plotly_chart(fig3)
 
-elif opcao == "Cadastrais de obras de construção civil por Bairros":
+elif opcao == "Cadastrais de obras de construção civil por Bairros (Base Externa O Cadastro Nacional de Obras-CNO)":
     st.header("Cadastrais de obras de construção civil por Bairros")
     construcao = df3['Bairro'].value_counts().head(10)
     fig4 = px.bar(
